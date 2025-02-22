@@ -1,8 +1,44 @@
+// const mongoose=require("mongoose");
+// const Joi=require('joi')
+
+// const InstituteSchem = new mongoose.Schema({
+//     name:{
+//         type:String,
+//         required:true
+//         },  
+//         Duration:{
+//             type:String,
+//             required:true
+//             },
+//             Fees:{
+//                 type:Number,
+//                 required:true
+//             }
+        
+// })
+// let Institute=Joi.object({
+//     name: Joi.string()
+//         .min(3)
+//         .max(30)
+//         .required(),
+//         Duration: Joi.string()
+//         .min(3)
+//         .max(30)
+//         .required(),
+//         Fees: Joi.number()
+//         .min(1)
+//         .max(1000)
+//         .required()
+//         })
+
+// let Institutesmodel=mongoose.model("Institute",InstituteSchem)
+// module.exports={Institutesmodel,Institute};
+
 const mongoose=require("mongoose");
 const Joi=require('joi')
 
 const InstituteSchem = new mongoose.Schema({
-    name:{
+    Course_Name:{
         type:String,
         required:true
         },  
@@ -17,7 +53,7 @@ const InstituteSchem = new mongoose.Schema({
         
 })
 let Institute=Joi.object({
-    name: Joi.string()
+    Course_Name: Joi.string()
         .min(3)
         .max(30)
         .required(),
@@ -27,7 +63,6 @@ let Institute=Joi.object({
         .required(),
         Fees: Joi.number()
         .min(1)
-        .max(1000)
         .required()
         })
 
