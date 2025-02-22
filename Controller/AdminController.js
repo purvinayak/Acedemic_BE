@@ -143,7 +143,7 @@ const postAdmin_Institute = (req, res) => {
             });
         }
 
-      
+
         let newAdmin = new adminmodel(data);
         newAdmin
             .save()
