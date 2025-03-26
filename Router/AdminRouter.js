@@ -17,7 +17,7 @@ const middleware =(req, res,next) => {
    }
    }
 
-router.post("/postAdmin_Institute",middleware,postAdmin_Institute);
+router.post("/postAdmin_Institute",postAdmin_Institute);
 router.get("/getAdmin_Institute",getAdmin_Institute);
 router.delete("/deleteAdmin_Institute",deleteAdmin_Institute);
 router.put("/updateAdmin_Institute",updateAdmin_Institute);

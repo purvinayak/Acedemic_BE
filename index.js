@@ -15,6 +15,7 @@ const InstituteRouter=require('./Router/InstituteRouter');
 console.log(typeof InstituteRouter );
 app.use("/institute",InstituteRouter);
 
+
 app.listen(process.env.PORT,(err)=>{
    if(!err){
     console.log("Server is running on port 9000");

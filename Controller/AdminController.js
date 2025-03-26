@@ -152,7 +152,9 @@ const postAdmin_Institute = (req, res) => {
                     mas: "Text Added Successfully",
                     data: newAdmin,
                     isSuccess: true,
+                  
                 });
+                console.log("Data Added Successfully:", newAdmin)
             })
             .catch((err) => {
                 res.status(500).send({
@@ -177,7 +179,11 @@ const getAdmin_Institute = (req, res) => {
             res.status(200).send({
                 mas: "Data Fetched Successfully",
                 data: data
+               
+
             })
+            console.log("Data Fetched Successfully:", data);
+            console.log("Data Fetched Successfully:", data);
         }).catch((err) => {
             res.status(500).send({
                 mas: "Error Occured",
@@ -192,36 +198,66 @@ const getAdmin_Institute = (req, res) => {
         })
     }
 }
-
 const updateAdmin_Institute = (req, res) => {
     try {
-        console.log("77", req.query.id);
+        console.log("Update Request ID:", req.query.id);
         console.log("Update Request Body:", req.body);
 
         adminmodel.updateOne({ _id: req.query.id }, req.body).then((data) => {
             console.log("Update Query ID:", req.query.id);
-            console.log("MongoDB Update Result:", result);
-            console.log('322')
+            console.log("MongoDB Update Result:", data);
+           
             res.status(200).send({
-                mas: "Data Updated Successfully",
+                message: "Data Updated Successfully",
                 data: data
-            })
+            });
         }).catch((err) => {
-            console.log('9090')
+            console.error("Error updating data:", err);
             res.status(500).send({
-                mas: "Error Occured",
-                err: err
-            })
-
-        })
-    }
-    catch (err) {
+                message: "Error Occurred",
+                error: err
+            });
+        });
+    } catch (err) {
+        console.error("Error updating data:", err);
         res.status(500).send({
-            mas: "Error Occured",
-            err: err
-        })
+            message: "Error Occurred",
+            error: err
+        });
     }
-}
+};
+
+
+
+// const updateAdmin_Institute = (req, res) => {
+//     try {
+//         console.log("77", req.query.id);
+//         console.log("Update Request Body:", req.body);
+
+//         adminmodel.updateOne({ _id: req.query.id }, req.body).then((data) => {
+//             console.log("Update Query ID:", req.query.id);
+//             console.log("MongoDB Update Result:", result);
+           
+//             res.status(200).send({
+//                 mas: "Data Updated Successfully",
+//                 data: data
+//             })
+//         }).catch((err) => {
+//             console.log('9090')
+//             res.status(500).send({
+//                 mas: "Error Occured",
+//                 err: err
+//             })
+
+//         })
+//     }
+//     catch (err) {
+//         res.status(500).send({
+//             mas: "Error Occured",
+//             err: err
+//         })
+//     }
+// }
 const deleteAdmin_Institute = (req, res) => {
     try {
 

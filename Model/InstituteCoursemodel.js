@@ -42,11 +42,11 @@ const InstituteSchem = new mongoose.Schema({
         type:String,
         required:true
         },  
-        Duration:{
+        duration:{
             type:String,
             required:true
             },
-            Fees:{
+            fees:{
                 type:Number,
                 required:true
             }
@@ -57,11 +57,11 @@ let Institute=Joi.object({
         .min(3)
         .max(30)
         .required(),
-        Duration: Joi.string()
+        duration: Joi.string()
         .min(3)
         .max(30)
         .required(),
-        Fees: Joi.number()
+        fees: Joi.number()
         .min(1)
         .required()
         })
