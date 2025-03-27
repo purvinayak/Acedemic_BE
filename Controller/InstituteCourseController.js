@@ -199,29 +199,29 @@ const getInstitute_Course = (req, res) => {
     }
 }
 
-// const getInstituteCourse_ByID = (req, res) => {
-//     try {
-//         Institutesmodel.findOne({ _id: req.query.id })
-//             .then((data) => {
-//                 res.send({
-//                     mas: "Course Added Successfully",
-//                     data: data
-//                 })
-//             })
-//             .catch((err) => {
-//                 res.send({
-//                     mas: err.message
-//                 })
-//             })
-//     }
-//     catch (err) {
-//         res.send({
-//             mas: err.message
-//         })
+const getInstituteCourseid = (req, res) => {
+    try {
+        Institutesmodel.findOne({ _id: req.query.id })
+            .then((data) => {
+                res.send({
+                    mas: "Course Added Successfully",
+                    data: data
+                })
+            })
+            .catch((err) => {
+                res.send({
+                    mas: err.message
+                })
+            })
+    }
+    catch (err) {
+        res.send({
+            mas: err.message
+        })
 
-//     }
+    }
 
-// }
+}
 
 const deleteInstitute_Course = (req, res) => {
     try {
@@ -267,7 +267,7 @@ const updateInstitute_Course = (req, res) => {
     }
 }
 
-module.exports = { postInstitute_Course, getInstitute_Course, deleteInstitute_Course, updateInstitute_Course };
+module.exports = { postInstitute_Course, getInstitute_Course,getInstituteCourseid, deleteInstitute_Course, updateInstitute_Course };
 
 
 
