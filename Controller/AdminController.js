@@ -119,9 +119,6 @@ const express = require("express");
 const app = express();
 const { adminmodel, adminSchema } = require("../Model/Adminmodel");
 const { trusted } = require("mongoose");
-
-
-
 const postAdmin_Institute = (req, res) => {
     try {
         let data = req.body;
@@ -229,35 +226,7 @@ const updateAdmin_Institute = (req, res) => {
 
 
 
-// const updateAdmin_Institute = (req, res) => {
-//     try {
-//         console.log("77", req.query.id);
-//         console.log("Update Request Body:", req.body);
 
-//         adminmodel.updateOne({ _id: req.query.id }, req.body).then((data) => {
-//             console.log("Update Query ID:", req.query.id);
-//             console.log("MongoDB Update Result:", result);
-           
-//             res.status(200).send({
-//                 mas: "Data Updated Successfully",
-//                 data: data
-//             })
-//         }).catch((err) => {
-//             console.log('9090')
-//             res.status(500).send({
-//                 mas: "Error Occured",
-//                 err: err
-//             })
-
-//         })
-//     }
-//     catch (err) {
-//         res.status(500).send({
-//             mas: "Error Occured",
-//             err: err
-//         })
-//     }
-// }
 const deleteAdmin_Institute = (req, res) => {
     try {
 

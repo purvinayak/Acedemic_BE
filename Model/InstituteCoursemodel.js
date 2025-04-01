@@ -66,5 +66,5 @@ let Institute=Joi.object({
         .required()
         })
 
-let Institutesmodel=mongoose.model("Institute",InstituteSchem)
+let Institutesmodel=mongoose.model("Institute_Course",InstituteSchem)
 module.exports={Institutesmodel,Institute};

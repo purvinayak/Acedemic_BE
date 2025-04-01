@@ -30,7 +30,20 @@ const InstituteStudent = new mongoose.Schema({
             DecidedFees:{
                 type:Number,
                 required:true
-            }
+            },
+            RecievedFees:{
+                type:Number,
+                required:true
+            },
+            RemainingFees:{
+                type:Number,
+                required:true
+            },
+            RecievedPaymentDate:{
+            type:Date,
+
+            required:true
+          },
         
 })
 let  InstituteStudentSchema=Joi.object({
@@ -41,7 +54,10 @@ let  InstituteStudentSchema=Joi.object({
     Email:Joi.string().min(1).max(30).required(),
     Course:Joi.string().required(),
     Duration: Joi.string().required(),
-    DecidedFees: Joi.number().required()
+    DecidedFees: Joi.number().required(),
+    RecievedFees: Joi.number().required(),
+    RemainingFees: Joi.number().required(),
+    RecievedPaymentDate:Joi.date().required()
 })
 
 let InstituteStudentModel=mongoose.model("InstituteStudent",InstituteStudent)

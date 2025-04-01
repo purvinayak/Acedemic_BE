@@ -82,6 +82,6 @@ let adminSchema=Joi.object({
 
 }).options({ allowUnknown: true });
 
-let adminmodel=mongoose.model("AdminSchema",AdminSchema);
-
+// let adminmodel=mongoose.model("AdminSchema",AdminSchema);
+const adminmodel = mongoose.models.AdminSchema || mongoose.model("AdminSchema", AdminSchema);
 module.exports={adminmodel,adminSchema};
