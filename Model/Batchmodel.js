@@ -22,7 +22,8 @@ const BatchSchema = new mongoose.Schema({
   duration: {
     type: String,
     required: true
-  }
+  },
+  
 });
 const batchValidation = Joi.object({
   batchName: Joi.string().required(),

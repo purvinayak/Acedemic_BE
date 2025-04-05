@@ -47,21 +47,9 @@ router.post("/postPayment", postPayment);
 //this is for batch 
 const {createBatch,getBatches,deleteBatch ,updateBatch } = require("../Controller/BatchController");
 router.post("/createBatch", createBatch);   
-router.get("/getBatchs", getBatches);
-router.delete("/deleteBatch", deleteBatch);
+router.get("/getBatches", getBatches);
+router.delete("/deleteBatch/:id", deleteBatch);
 router.put("/updateBatch/:id", updateBatch);
-
-
-// const {postInstitute_Course, getInstitute_Course,getInstituteCourseid, deleteInstitute_Course, updateInstitute_Course }=require("../Controller/InstituteCourseController");
-// router.post("/postInstitute_Course",postInstitute_Course);
-// router.get("/getInstitute_Course",getInstitute_Course);
-// router.get("/getInstituteCourseid",getInstituteCourseid);
-// router.delete("/deleteInstitute_Course",deleteInstitute_Course);
-// router.put("/updateInstitute_Course",updateInstitute_Course);
-
-
-
-
 
 module.exports=router;
 

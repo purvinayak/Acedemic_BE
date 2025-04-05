@@ -23,6 +23,12 @@ router.delete("/deleteAdmin_Institute",deleteAdmin_Institute);
 router.put("/updateAdmin_Institute",updateAdmin_Institute);
 
 
+
+const {  createAdmin, AdminLogin } = require('../Controller/AdminloginController');
+const { auth } = require('../Middleware/Authentication');
+router.post('/login', AdminLogin);
+router.post('/createAdmin', createAdmin);
+
 module.exports = router;
 
 

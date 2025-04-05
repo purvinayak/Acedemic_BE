@@ -177,18 +177,18 @@ const createBatch = async (req, res) => {
 // };
 const getBatches = async (req, res) => {
   try {
-    console.log('Fetching batches...'); // Debug log
+    console.log('Fetching batches...'); 
     
     const batches = await BatchModel.find()
       .populate({
         path: 'selectedCourse',
         select: 'Course_Name duration fees',
-        model: 'Institute_Course' // Explicitly specify the model
+        model: 'Institute_Course' 
       })
       .populate({
         path: 'selectedStudents',
         select: 'StudentName Email',
-        model: 'InstituteStudent' // Explicitly specify the model
+        model: 'InstituteStudent' 
       });
 
     console.log('Fetched batches:', batches); // Debug log
